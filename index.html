@@ -891,10 +891,11 @@
         Si te interesa lo que cuento, déjame tu email y te avisaré cuando haya nuevas piezas del ecosistema, próximas fechas de taller, o conversaciones sobre los temas del libro. Sin spam. Solo lo esencial.
       </p>
 
-      <form class="newsletter-form" action="#" method="post">
-        <input type="email" name="email" placeholder="tu@email.com" required aria-label="Correo electrónico">
-        <button type="submit" class="btn btn-light">quiero saber más</button>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" name="email" id="newsletter-email" placeholder="tu@email.com" required aria-label="Correo electrónico">
+        <button type="submit" class="btn btn-light" id="newsletter-btn">quiero saber más</button>
       </form>
+      <p id="newsletter-msg" style="display:none; margin-top:1rem; font-size:0.9rem;"></p>
     </div>
   </section>
 
@@ -916,6 +917,58 @@
       </ul>
     </div>
   </footer>
+
+  <!-- ============================================
+  NEWSLETTER SCRIPT — GOOGLE SHEETS
+  ============================================ -->
+  <script>
+    (function() {
+      // === CONFIGURACIÓN: pega aquí la URL de tu Web App de Google Apps Script ===
+      var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/TU_WEBAPP_ID/exec';
+
+      var form = document.getElementById('newsletter-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var emailInput = document.getElementById('newsletter-email');
+        var btn = document.getElementById('newsletter-btn');
+        var msg = document.getElementById('newsletter-msg');
+        var email = emailInput.value.trim();
+
+        if (!email) return;
+
+        // Mostrar estado "enviando"
+        btn.textContent = 'enviando…';
+        btn.disabled = true;
+        msg.style.display = 'none';
+
+        // Enviar a Google Sheets
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'email=' + encodeURIComponent(email)
+        })
+        .then(function() {
+          msg.textContent = 'Gracias. Te avisaré cuando haya novedades.';
+          msg.style.color = '#FDFBF7';
+          msg.style.display = 'block';
+          emailInput.value = '';
+        })
+        .catch(function() {
+          msg.textContent = 'Algo falló. Prueba de nuevo o escríbeme a manel.rueda@gmail.com';
+          msg.style.color = '#C2866B';
+          msg.style.display = 'block';
+        })
+        .finally(function() {
+          btn.textContent = 'quiero saber más';
+          btn.disabled = false;
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
