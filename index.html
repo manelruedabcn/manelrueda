@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El Ikigai que no te contaron, de Manel Rueda. Un ecosistema para unir el hacer y el ser: libro, cuaderno, taller y cartas.">
+  <title>El Ikigai que no te contaron — Manel Rueda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --negro:       #272727;
+      --gris-medio:  #6E6E6E;
+      --gris-claro:  #A8A8A8;
+      --blanco-pag:  #FDFBF7;
+      --terracota:   #C2866B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--negro);
+      background-color: var(--blanco-pag);
+      letter-spacing: 0.04em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1, h2, h3, h4 {
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); color: var(--gris-medio); }
+    h3 { font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 400; letter-spacing: 0.08em; }
+
+    p { margin-bottom: 1.1rem; }
+    p.lead { font-size: 1.1rem; color: var(--gris-medio); }
+
+    .accent { color: var(--terracota); font-weight: 400; }
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container { max-width: 840px; margin: 0 auto; padding: 0 2rem; }
+
+    section { padding: 6rem 0; }
+
+    .section-label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-claro);
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--gris-claro);
+      opacity: 0.3;
+      margin: 2rem 0;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253, 251, 247, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(168, 168, 168, 0.2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--negro);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--gris-medio);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--negro); }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+    }
+
+    .hero h1 { margin-bottom: 0.7rem; }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--gris-medio);
+      margin-bottom: 0.4rem;
+    }
+    .hero .author {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--gris-medio);
+      margin-bottom: 2rem;
+    }
+    .hero .lead {
+      max-width: 560px;
+      margin: 0 auto 2.2rem;
+      font-size: 1.05rem;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--negro);
+      color: var(--negro);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn:hover { background: var(--negro); color: var(--blanco-pag); }
+
+    .btn-primary { background: var(--negro); color: var(--blanco-pag); }
+    .btn-primary:hover { background: transparent; color: var(--negro); }
+
+    .btn-amazon {
+      border-color: var(--gris-medio);
+      color: var(--gris-medio);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-amazon:hover { background: var(--gris-medio); color: var(--blanco-pag); }
+
+    /* ============================================
+       EL LIBRO
+       ============================================ */
+    .libro-flex {
+      display: flex;
+      gap: 3.5rem;
+      align-items: flex-start;
+      margin-top: 2.5rem;
+    }
+
+    .libro-portada {
+      flex-shrink: 0;
+      width: 200px;
+      aspect-ratio: 2/3;
+      background: var(--negro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .libro-portada .titulo-libro {
+      color: var(--blanco-pag);
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+    }
+    .libro-portada .autor-libro {
+      color: var(--gris-claro);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .libro-portada .simbolo-portada {
+      width: 60px;
+      opacity: 0.5;
+    }
+
+    .libro-info { flex: 1; }
+
+    .libro-info .estructura {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 1.5rem;
+    }
+
+    .estructura-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .estructura-item .acto {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris-medio);
+      min-width: 4.5rem;
+    }
+
+    .estructura-item span:last-child {
+      font-size: 0.88rem;
+      color: var(--gris-medio);
+    }
+
+    /* Portada placeholder */
+    .portada-placeholder {
+      flex-shrink: 0;
+      width: 200px;
+      aspect-ratio: 2/3;
+      background: var(--blanco-pag);
+      border: 1px solid rgba(39,39,39,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .portada-placeholder span {
+      font-size: 0.72rem;
+      color: var(--gris-claro);
+      letter-spacing: 0.08em;
+      font-weight: 300;
+    }
+
+    /* ============================================
+       EL MÉTODO: DOS IKIGAIS
+       ============================================ */
+    .dos-ikigais {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .ikigai-card {
+      padding: 2rem;
+      border: 1px solid rgba(168, 168, 168, 0.3);
+    }
+
+    .ikigai-card .ikigai-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gris-medio);
+      margin-bottom: 0.4rem;
+    }
+
+    .ikigai-card h3 { margin-bottom: 0.8rem; }
+
+    .ikigai-card .preguntas {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .ikigai-card .preguntas li {
+      font-size: 0.88rem;
+      color: var(--gris-medio);
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .ikigai-card .preguntas li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gris-claro);
+    }
+
+    /* ============================================
+       CINCO GESTOS
+       ============================================ */
+    .etapas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .etapa-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .etapa-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+    }
+
+    .etapa-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .etapa-num {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gris-medio);
+      margin-bottom: 0.3rem;
+    }
+
+    .etapa-card h3 { margin-bottom: 0.4rem; }
+    .etapa-card p { font-size: 0.9rem; color: var(--gris-medio); margin-bottom: 0; }
+
+    /* ============================================
+       PRODUCTOS
+       ============================================ */
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .producto-card {
+      text-align: center;
+      padding: 2rem 1.2rem;
+      border: 1px solid rgba(168, 168, 168, 0.25);
+      transition: border-color 0.3s;
+    }
+    .producto-card:hover { border-color: rgba(39,39,39,0.35); }
+
+    .producto-icon {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 1rem;
+      opacity: 0.7;
+    }
+
+    .producto-card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .producto-card p { font-size: 0.85rem; color: var(--gris-medio); margin-bottom: 1.2rem; }
+    .producto-card .estado {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracota);
+    }
+
+    /* ============================================
+       TALLERES
+       ============================================ */
+    .talleres-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .taller-card {
+      padding: 2rem;
+      border: 1px solid rgba(168, 168, 168, 0.3);
+    }
+
+    .taller-card .modalidad {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gris-medio);
+      margin-bottom: 0.4rem;
+    }
+
+    .taller-card h3 { margin-bottom: 0.5rem; }
+    .taller-card p { font-size: 0.9rem; color: var(--gris-medio); }
+
+    /* ============================================
+       AUTOR
+       ============================================ */
+    .autor-flex {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .autor-texto { flex: 1; }
+
+    .autor-simbolo {
+      flex-shrink: 0;
+      width: 140px;
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       CTA / NEWSLETTER
+       ============================================ */
+    .cta-section {
+      text-align: center;
+      background: var(--negro);
+      color: var(--blanco-pag);
+    }
+    .cta-section h2 { color: var(--blanco-pag); }
+    .cta-section .lead { color: var(--gris-claro); }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input[type="email"] {
+      padding: 0.85rem 1.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      border: 1.5px solid var(--gris-medio);
+      background: transparent;
+      color: var(--blanco-pag);
+      min-width: 280px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .newsletter-form input[type="email"]::placeholder {
+      color: var(--gris-claro);
+      font-weight: 300;
+    }
+    .newsletter-form input[type="email"]:focus { border-color: var(--blanco-pag); }
+
+    .btn-light { border-color: var(--blanco-pag); color: var(--blanco-pag); }
+    .btn-light:hover { background: var(--blanco-pag); color: var(--negro); }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(168, 168, 168, 0.25);
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--gris-claro);
+      margin-bottom: 0.4rem;
+    }
+    footer a {
+      color: var(--gris-medio);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    footer a:hover { color: var(--negro); }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 700px) {
+      section { padding: 4.5rem 0; }
+      .hero { padding: 7rem 0 3.5rem; }
+      .nav-links { gap: 0.9rem; }
+      .nav-links a { font-size: 0.65rem; letter-spacing: 0.06em; }
+
+      .libro-flex { flex-direction: column; align-items: center; text-align: center; }
+      .libro-portada, .portada-placeholder { width: 160px; }
+      .estructura { grid-template-columns: 1fr; }
+
+      .dos-ikigais { grid-template-columns: 1fr; }
+      .etapas-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+      .productos-grid { grid-template-columns: 1fr; }
+      .talleres-grid { grid-template-columns: 1fr; }
+      .autor-flex { flex-direction: column-reverse; text-align: center; }
+      .newsletter-form { flex-direction: column; align-items: center; }
+      .newsletter-form input[type="email"] { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+  HEADER
+  ============================================ -->
+  <header>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">ik<span class="accent">igai</span>er</a>
+      <ul class="nav-links">
+        <li><a href="#inicio">inicio</a></li>
+        <li><a href="#libro">libro</a></li>
+        <li><a href="#metodo">método</a></li>
+        <li><a href="#cuaderno">cuaderno</a></li>
+        <li><a href="#talleres">taller</a></li>
+        <li><a href="#autor">autor</a></li>
+        <li><a href="#contacto">contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================
+  HERO
+  ============================================ -->
+    <section class="hero" id="inicio">
+    <div class="container">
+
+      <h1>El Ikigai que no te contaron</h1>
+      <p class="subtitle">Un libro, un cuaderno, un camino</p>
+      <p class="author">Manel Rueda</p>
+      <p class="lead">
+        Una propuesta para unir el hacer y el ser.<br>
+        La dirección y la presencia.<br>
+        Sin fórmulas, sin promesas fáciles, sin atajos.
+      </p>
+      <a href="#productos" class="btn">conocer el ecosistema</a>
+    </div>
+  </section>
+
+  <!-- ============================================
+  EL LIBRO
+  ============================================ -->
+  <section id="libro">
+    <div class="container">
+      <span class="section-label">el libro</span>
+      <h2>El Ikigai que no te contaron</h2>
+
+      <div class="libro-flex">
+        <!-- Portada placeholder -->
+        <div class="portada-placeholder">
+          <span>Imagen de la portada</span>
+        </div>
+
+        <div class="libro-info">
+          <p class="lead">
+            El ikigai que nos han vendido en Occidente es útil, pero incompleto. Y el ikigai japonés auténtico es profundo, pero a menudo inaccesible. Este libro tiende un puente entre los dos.
+          </p>
+          <p>No desde la teoría, sino desde la práctica. No como quien enseña, sino como quien encontró algo y quiere compartirlo. Un viaje en tres actos que te lleva desde el piloto automático hasta una vida con dirección y arraigo.</p>
+
+          <div class="estructura">
+            <div class="estructura-item">
+              <span class="acto">Acto I</span>
+              <span>El Despertar — zombis, miedos y máscaras</span>
+            </div>
+            <div class="estructura-item">
+              <span class="acto">Acto II</span>
+              <span>El Mapa — las dos almas del ikigai y la ciencia del propósito</span>
+            </div>
+            <div class="estructura-item">
+              <span class="acto">Acto III</span>
+              <span>La Vida en Marcha — trabajo, relaciones y diálogo interno</span>
+            </div>
+            <div class="estructura-item">
+              <span class="acto">+ herramientas</span>
+              <span>ejercicios y una libreta para acompañar la lectura</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#" class="btn btn-primary">comprar en Amazon</a>
+            <a href="#cuaderno" class="btn">ver el cuaderno de trabajo</a>
+          </div>
+          <p style="font-size: 0.78rem; color: var(--gris-claro); margin-top: 1rem;">Primera edición: abril de 2026 · Publicación independiente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  EL MÉTODO
+  ============================================ -->
+  <section id="metodo">
+    <div class="container">
+      <span class="section-label">el método</span>
+      <h2>Unir el hacer y el ser</h2>
+      <p class="lead">
+        La mayoría de las personas tienen una de las dos dimensiones más trabajada que la otra. Un ikigaier no elige: aprende a moverse en las dos.
+      </p>
+
+      <div class="dos-ikigais">
+        <div class="ikigai-card">
+          <span class="ikigai-label">Dimensión occidental</span>
+          <h3>Ikigai Activo</h3>
+          <p style="font-size: 0.92rem; color: var(--gris-medio);">La brújula que busca dirección, contribución y propósito externo. Responde al <em>hacer</em>: qué quiero construir, cómo puedo aportar, hacia dónde voy.</p>
+          <ul class="preguntas">
+            <li>¿Qué me apasiona?</li>
+            <li>¿En qué soy bueno?</li>
+            <li>¿Qué necesita el mundo?</li>
+            <li>¿De qué puedo vivir?</li>
+          </ul>
+        </div>
+
+        <div class="ikigai-card">
+          <span class="ikigai-label">Dimensión japonesa</span>
+          <h3>Ikigai Consciente</h3>
+          <p style="font-size: 0.92rem; color: var(--gris-medio);">La raíz que no depende de logros ni metas. Responde al <em>ser</em>: estar presente, encontrar valor en lo cotidiano, sentir que tu vida vale tal como es.</p>
+          <ul class="preguntas">
+            <li>¿Estoy presente en lo que hago?</li>
+            <li>¿Encuentro valor en lo pequeño?</li>
+            <li>¿Me siento en paz con quien soy?</li>
+            <li>¿Hábito mi vida o solo la atravieso?</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3 style="margin-bottom: 1.5rem;">Cinco gestos para el camino</h3>
+
+      <div class="etapas-grid">
+        <div class="etapa-card">
+          <div class="etapa-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="18" stroke="#272727" stroke-width="1.5" fill="none"/>
+              <circle cx="28" cy="28" r="6" stroke="#6E6E6E" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="etapa-num">01</span>
+            <h3>Parar y escuchar</h3>
+            <p>Antes de avanzar, mirar dónde estás. Hacer silencio para oír lo que el ruido tapa.</p>
+          </div>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="28" cy="28" rx="18" ry="14" stroke="#272727" stroke-width="1.5" fill="none"/>
+              <ellipse cx="28" cy="28" rx="8" ry="5" stroke="#6E6E6E" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="etapa-num">02</span>
+            <h3>Mirar dónde te has alejado de ti</h3>
+            <p>Reconocer las pequeñas traiciones cotidianas. Sin juicio, sin drama.</p>
+          </div>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 22 C18 16 24 12 28 12 C32 12 38 16 40 22 C42 28 46 34 44 38 C42 42 36 44 28 44 C20 44 14 42 12 38 C10 34 14 28 16 22 Z" stroke="#272727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <line x1="22" y1="28" x2="30" y2="28" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="28" y1="26" x2="28" y2="32" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="etapa-num">03</span>
+            <h3>Reconocer las máscaras</h3>
+            <p>Las protecciones que un día te ayudaron y hoy te limitan. Verlas para poder elegir.</p>
+          </div>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 44 Q20 28 28 18 Q36 28 42 44" stroke="#272727" stroke-width="1.5" fill="none"/>
+              <path d="M18 40 Q22 32 28 24 Q34 32 38 40" stroke="#6E6E6E" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="etapa-num">04</span>
+            <h3>Bajar de la mente al cuerpo</h3>
+            <p>El propósito no se piensa, se siente. La inteligencia que ya está en tu cuerpo.</p>
+          </div>
+        </div>
+        <div class="etapa-card">
+          <div class="etapa-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="28" cy="28" rx="19" ry="12.5" stroke="#272727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M22 23 Q28 18 34 26" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="etapa-num">05</span>
+            <h3>Cerrar y elegir un primer paso</h3>
+            <p>No un plan de vida. Un gesto concreto, real, posible esta semana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  PRODUCTOS
+  ============================================ -->
+  <section id="productos">
+    <div class="container">
+      <span class="section-label">productos</span>
+      <h2>El ecosistema IKIGAIER</h2>
+      <p class="lead">Dos piezas publicadas, dos en camino. Todas comparten la misma raíz: unir el hacer y el ser sin recetas ni promesas fáciles.</p>
+
+      <div class="productos-grid">
+
+        <!-- Libro -->
+        <div class="producto-card">
+          <div class="producto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+              <rect x="8" y="6" width="40" height="46" rx="2" stroke="#272727" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <line x1="16" y1="16" x2="40" y2="16" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="16" y1="24" x2="36" y2="24" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="16" y1="32" x2="38" y2="32" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>El Ikigai que no te contaron</h3>
+          <p>El libro completo. Una invitación a unir el hacer y el ser, sin recetas ni promesas fáciles. Disponible en castellano, catalán e inglés.</p>
+          <a href="#" class="btn btn-amazon" style="font-size:0.75rem; padding:0.6rem 1.6rem;">comprar en Amazon</a>
+        </div>
+
+        <!-- Cuaderno -->
+        <div class="producto-card">
+          <div class="producto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+              <rect x="10" y="8" width="36" height="42" rx="1" stroke="#272727" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M18 20 Q28 14 38 18" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+              <path d="M18 28 Q28 22 38 26" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <h3>Camina sin separarte de ti</h3>
+          <p>El cuaderno de trabajo. Para hacer el viaje, no solo leerlo.</p>
+          <a href="#" class="btn btn-amazon" style="font-size:0.75rem; padding:0.6rem 1.6rem;">comprar en Amazon</a>
+        </div>
+
+        <!-- Cartas -->
+        <div class="producto-card">
+          <div class="producto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+              <rect x="8" y="6" width="28" height="38" rx="3" stroke="#272727" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <rect x="18" y="10" width="28" height="38" rx="3" stroke="#6E6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <ellipse cx="22" cy="26" rx="5" ry="7" stroke="#6E6E6E" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <h3>Las cartas IKIGAIER</h3>
+          <p>Un mazo de preguntas esenciales para usar en solitario o en grupo. Disparadores de reflexión para el día a día.</p>
+          <span class="estado">próximamente</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  EL CUADERNO
+  ============================================ -->
+  <section id="cuaderno">
+    <div class="container">
+      <span class="section-label">cuaderno de trabajo</span>
+      <h2>Camina sin separarte de ti</h2>
+      <p class="lead">
+        El complemento práctico de <em>El Ikigai que no te contaron</em>. Un cuaderno diseñado para que el método se convierta en experiencia real. Cinco gestos de ejercicios guiados, diarios de integración y herramientas para recorrer el camino del propósito a tu ritmo.
+      </p>
+
+      <div class="libro-flex" style="margin-top: 2.5rem;">
+        <div class="portada-placeholder">
+          <span>Imagen de la portada</span>
+        </div>
+
+        <div class="libro-info">
+          <p style="font-size: 1rem; margin-bottom: 0.8rem;">No necesitas haber leído el libro para usar este cuaderno. Es una invitación independiente a hacerte preguntas distintas. A parar. A escucharte.</p>
+          <p style="font-size: 0.92rem; color: var(--gris-medio);">Cinco gestos sencillos para que lo importante no quede tapado por lo urgente: parar y escuchar, mirar dónde te has alejado de ti, reconocer las máscaras que te sostienen, bajar de la mente al cuerpo, y cerrar eligiendo un primer paso.</p>
+        </div>
+      </div>
+
+      <!-- Dos rutas -->
+      <div class="dos-ikigais" style="margin-top: 3rem;">
+        <div class="ikigai-card">
+          <span class="ikigai-label">Ruta en solitario</span>
+          <h3>A tu ritmo</h3>
+          <p style="font-size: 0.92rem; color: var(--gris-medio);">Avanza con sesiones cortas de veinte a treinta minutos, repartidas a lo largo de varias semanas. Si quieres, compártelo con una persona de confianza. El cuaderno completo es para esta ruta.</p>
+        </div>
+
+        <div class="ikigai-card">
+          <span class="ikigai-label">Ruta taller</span>
+          <h3>Con facilitador</h3>
+          <p style="font-size: 0.92rem; color: var(--gris-medio);">Pensado para trabajarlo en grupo guiado. Incluye ejercicios para compartir con el grupo y dinámicas que el facilitador puede adaptar. El taller introduce y detona; el recorrido completo se hace después en solitario.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="#" class="btn btn-primary">comprar en Amazon</a>
+        <p style="font-size: 0.78rem; color: var(--gris-claro); margin-top: 0.8rem;">Disponible en Amazon · Publicación independiente · 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  TALLERES
+  ============================================ -->
+  <section id="talleres">
+    <div class="container">
+      <span class="section-label">talleres</span>
+      <h2>El taller</h2>
+      <p class="lead">El método trabajado en directo. Un espacio guiado para recorrer las preguntas que el libro y el cuaderno proponen, en compañía de otras personas que están en el mismo punto. Presencial y online.</p>
+
+      <div class="talleres-grid">
+        <div class="taller-card">
+          <span class="modalidad">presencial y online</span>
+          <h3>Camina sin separarte de ti — el taller</h3>
+          <p>Una sesión guiada para abrir las preguntas, no para resolverlas. Lo que se mueve aquí continúa después con el cuaderno, el libro, o tu propio camino.</p>
+          <span class="estado" style="margin-top: 1rem; display: inline-block;">próximamente — apúntate a la newsletter para recibir las fechas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  AUTOR
+  ============================================ -->
+  <section id="autor">
+    <div class="container">
+      <span class="section-label">autor</span>
+      <h2>Manel Rueda</h2>
+
+      <div class="autor-flex">
+        <div class="autor-texto">
+          <p class="lead">
+            Manel Rueda no es escritor de oficio. Tiene una profesión, una rutina, una vida.
+          </p>
+          <p>
+            Escribe sobre las preguntas que aprendió a hacerse cuando dejó de buscar respuestas. Las comparte aquí contigo.
+          </p>
+          <p>
+            Vive cerca del Mediterráneo y no se considera un experto en ikigai. Se considera alguien que lo experimenta. «Hay una diferencia importante entre las dos cosas: creer es adoptar una idea; experimentar es dejar que una idea te cambie. De lo segundo nacen estos libros.»
+          </p>
+        </div>
+        <div class="autor-simbolo">
+          <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+            <ellipse cx="52" cy="60" rx="34" ry="22" stroke="#A8A8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M40 48 Q52 42 68 54" stroke="#A8A8A8" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M80 54 Q102 40 114 52" stroke="#A8A8A8" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M96 48 Q140 22 154 40" stroke="#A8A8A8" stroke-width="1" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  CTA / NEWSLETTER
+  ============================================ -->
+  <section class="cta-section" id="contacto">
+    <div class="container">
+      <span class="section-label" style="color: rgba(168,168,168,0.7);">contacto</span>
+      <h2>Mantente cerca del camino</h2>
+      <p class="lead">
+        Si te interesa lo que cuento, déjame tu email y te avisaré cuando haya nuevas piezas del ecosistema, próximas fechas de taller, o conversaciones sobre los temas del libro. Sin spam. Solo lo esencial.
+      </p>
+
+      <form class="newsletter-form" action="#" method="post">
+        <input type="email" name="email" placeholder="tu@email.com" required aria-label="Correo electrónico">
+        <button type="submit" class="btn btn-light">quiero saber más</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================
+  FOOTER
+  ============================================ -->
+  <footer>
+    <div class="container">
+      <p style="font-weight:400; font-size:1rem; letter-spacing:0.1em;">ik<span style="color:#C2866B;">igai</span>er</p>
+      <p>&copy; 2026 Manel Rueda. Todos los derechos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="#libro">libro</a></li>
+        <li><a href="#metodo">método</a></li>
+        <li><a href="#productos">productos</a></li>
+        <li><a href="#cuaderno">cuaderno</a></li>
+        <li><a href="#talleres">taller</a></li>
+        <li><a href="#autor">autor</a></li>
+        <li><a href="#contacto">contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
