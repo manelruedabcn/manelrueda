@@ -947,7 +947,10 @@
 
         fetch('https://formspree.io/f/' + FORMSPREE_ID, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
           body: JSON.stringify({ email: email })
         })
         .then(function(response) {
@@ -956,16 +959,18 @@
             msg.style.color = '#FDFBF7';
             emailInput.value = '';
           } else {
-            msg.textContent = 'Algo falló. Prueba de nuevo o escríbeme a manel.rueda@gmail.com';
-            msg.style.color = '#C2866B';
+            return response.json().then(function(data) {
+              var errorMsg = data.error || 'Revisa tu email de Formspree para confirmar el formulario.';
+              msg.textContent = errorMsg;
+              msg.style.color = '#C2866B';
+            });
           }
         })
-        .catch(function() {
-          msg.textContent = 'Algo falló. Prueba de nuevo o escríbeme a manel.rueda@gmail.com';
+        .catch(function(err) {
+          msg.textContent = 'Error de conexión. ¿Has confirmado el email de activación de Formspree?';
           msg.style.color = '#C2866B';
         })
         .finally(function() {
-          msg.textContent = msg.textContent;
           msg.style.display = 'block';
           btn.textContent = 'quiero saber más';
           btn.disabled = false;
