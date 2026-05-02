@@ -56,26 +56,23 @@
     }
 
     .portada {
-      display: flex;
-      align-items: center;
-      gap: 3.5rem;
-      max-width: 800px;
+      max-width: 680px;
       width: 100%;
+      margin: 0 auto;
     }
 
     .portada-col-texto {
-      flex: 1;
       text-align: center;
-      min-width: 0;
     }
 
     .portada-img {
-      flex-shrink: 0;
+      display: block;
       width: 150px;
       height: 150px;
       border-radius: 6px;
       object-fit: cover;
       box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      margin: 0 auto 2.5rem;
     }
 
     .portada-tag {
@@ -155,14 +152,18 @@
     }
 
     @media (max-width: 640px) {
-      .portada {
-        flex-direction: column-reverse;
-        gap: 2rem;
+      .portada-img {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 2rem;
       }
 
-      .portada-img {
-        width: 120px;
-        height: 120px;
+      .texto-principal {
+        max-width: 100%;
+      }
+
+      .microhistoria {
+        max-width: 100%;
       }
     }
   </style>
@@ -170,18 +171,18 @@
 <body>
   <main>
     <section class="portada" aria-label="Portada de Manel Rueda">
-      <img
-        class="portada-img"
-        src="assets/manel-rueda-retrato.jpg"
-        alt="Manel Rueda"
-        width="150"
-        height="150"
-        loading="eager"
-      >
       <div class="portada-col-texto">
         <span class="portada-tag">manel rueda</span>
         <h1>MANEL RUEDA</h1>
         <p class="subtitulo">Autor de «Lo que no te contaron del ikigai» y creador del enfoque IKIGAIER</p>
+        <img
+          class="portada-img"
+          src="assets/manel-rueda-retrato.jpg"
+          alt="Manel Rueda"
+          width="150"
+          height="150"
+          loading="eager"
+        >
         <p class="texto-principal">Un espacio para explorar propósito, consciencia y acción desde una forma más humana, profunda y real de entender el ikigai.</p>
         <p class="microhistoria">Durante años busqué el propósito en el hacer, en los resultados y en las respuestas rápidas. Con el tiempo entendí que el sentido no se encuentra solo avanzando, sino aprendiendo a no separarte de ti mientras caminas.</p>
         <p class="microhistoria">De esa búsqueda nace IKIGAIER: una forma más humana, profunda y real de mirar el ikigai.</p>
