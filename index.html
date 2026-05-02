@@ -891,7 +891,8 @@
         Si te interesa lo que cuento, déjame tu email y te avisaré cuando haya nuevas piezas del ecosistema, próximas fechas de taller, o conversaciones sobre los temas del libro. Sin spam. Solo lo esencial.
       </p>
 
-      <form class="newsletter-form" id="newsletter-form">
+      <form class="newsletter-form" id="newsletter-form" action="https://formspree.io/f/xgodvlqw" method="POST">
+        <input type="hidden" name="_next" value="https://manelruedabcn.github.io/IKIGAIER/?success=1">
         <input type="email" name="email" id="newsletter-email" placeholder="tu@email.com" required aria-label="Correo electrónico">
         <button type="submit" class="btn btn-light" id="newsletter-btn">quiero saber más</button>
       </form>
@@ -919,63 +920,24 @@
   </footer>
 
   <!-- ============================================
-  NEWSLETTER SCRIPT — FORMSPREE
+  NEWSLETTER — Mensaje de confirmación al volver de Formspree
   ============================================ -->
   <script>
     (function() {
-      // === PASO 1: Crea cuenta gratis en https://formspree.io ===
-      // === PASO 2: Crea un nuevo form, copia el ID que te da ===
-      // === PASO 3: Pega tu ID aquí abajo (sustituye TU_FORMSPREE_ID) ===
-      var FORMSPREE_ID = 'xgodvlqw';
-
-      var form = document.getElementById('newsletter-form');
-      if (!form) return;
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        var emailInput = document.getElementById('newsletter-email');
-        var btn = document.getElementById('newsletter-btn');
+      // Mostrar confirmación si venimos de Formspree (parámetro ?success=1)
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('success') === '1') {
         var msg = document.getElementById('newsletter-msg');
-        var email = emailInput.value.trim();
-
-        if (!email) return;
-
-        btn.textContent = 'enviando…';
-        btn.disabled = true;
-        msg.style.display = 'none';
-
-        fetch('https://formspree.io/f/' + FORMSPREE_ID, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({ email: email })
-        })
-        .then(function(response) {
-          if (response.ok) {
-            msg.textContent = 'Gracias. Te avisaré cuando haya novedades.';
-            msg.style.color = '#FDFBF7';
-            emailInput.value = '';
-          } else {
-            return response.json().then(function(data) {
-              var errorMsg = data.error || 'Revisa tu email de Formspree para confirmar el formulario.';
-              msg.textContent = errorMsg;
-              msg.style.color = '#C2866B';
-            });
-          }
-        })
-        .catch(function(err) {
-          msg.textContent = 'Error de conexión. ¿Has confirmado el email de activación de Formspree?';
-          msg.style.color = '#C2866B';
-        })
-        .finally(function() {
+        if (msg) {
+          msg.textContent = 'Gracias. Te avisaré cuando haya novedades.';
+          msg.style.color = '#FDFBF7';
           msg.style.display = 'block';
-          btn.textContent = 'quiero saber más';
-          btn.disabled = false;
-        });
-      });
+        }
+        // Limpiar el parámetro de la URL sin recargar
+        var url = new URL(window.location.href);
+        url.searchParams.delete('success');
+        window.history.replaceState({}, document.title, url.pathname + url.search + url.hash);
+      }
     })();
   </script>
 
