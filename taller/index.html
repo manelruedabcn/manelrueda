@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taller Camina sin separarte de ti: el método IKIGAIER en directo. Dos horas guiadas para recorrer los cinco gestos del método, con el cuaderno de trabajo incluido.">
+  <title>Taller IKIGAIER: Camina sin separarte de ti | Manel Rueda</title>
+  <link rel="canonical" href="https://manelrueda.com/taller/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Taller IKIGAIER: Camina sin separarte de ti">
+  <meta property="og:description" content="Dos horas guiadas para recorrer los cinco gestos del método IKIGAIER. Con el cuaderno Camina sin separarte de ti incluido en la entrada.">
+  <meta property="og:image" content="https://manelrueda.com/ikigaier/assets/images/cuaderno-camina-portada.png">
+  <meta property="og:url" content="https://manelrueda.com/taller/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Taller IKIGAIER: Camina sin separarte de ti">
+  <meta name="twitter:description" content="Dos horas guiadas para recorrer los cinco gestos del método IKIGAIER. Cuaderno incluido.">
+  <meta name="twitter:image" content="https://manelrueda.com/ikigaier/assets/images/cuaderno-camina-portada.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       RESET & BASE — coherente con /ikigaier/
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --negro:       #272727;
+      --gris-medio:  #6E6E6E;
+      --gris-claro:  #A8A8A8;
+      --blanco-pag:  #FDFBF7;
+      --terracota:   #C2866B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--negro);
+      background-color: var(--blanco-pag);
+      letter-spacing: 0.04em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ============================================
+       TYPOGRAPHY
+       ============================================ */
+    h1, h2, h3, h4 {
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+    h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); color: var(--gris-medio); }
+    h3 { font-size: clamp(1.05rem, 2vw, 1.3rem); font-weight: 400; letter-spacing: 0.08em; }
+
+    p { margin-bottom: 1.1rem; }
+    p.lead { font-size: 1.1rem; color: var(--gris-medio); }
+
+    .accent { color: var(--terracota); font-weight: 400; }
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container { max-width: 840px; margin: 0 auto; padding: 0 2rem; }
+
+    section { padding: 6rem 0; }
+
+    .section-label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-claro);
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--gris-claro);
+      opacity: 0.3;
+      margin: 2rem 0;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(253, 251, 247, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(168, 168, 168, 0.2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--negro);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--gris-medio);
+      transition: color 0.25s;
+    }
+    .nav-back:hover { color: var(--negro); }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+    }
+
+    .hero .pretitle {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-claro);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 { margin-bottom: 1rem; }
+
+    .hero .bajada {
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      font-size: 1.05rem;
+      color: var(--gris-medio);
+      line-height: 1.75;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--negro);
+      color: var(--negro);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn:hover { background: var(--negro); color: var(--blanco-pag); }
+
+    .btn-primary { background: var(--negro); color: var(--blanco-pag); }
+    .btn-primary:hover { background: transparent; color: var(--negro); }
+
+    .btn-light { border-color: var(--blanco-pag); color: var(--blanco-pag); }
+    .btn-light:hover { background: var(--blanco-pag); color: var(--negro); }
+
+    .btn-small {
+      padding: 0.55rem 1.4rem;
+      font-size: 0.7rem;
+    }
+
+    .text-link {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--gris-medio);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gris-claro);
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .text-link:hover { color: var(--negro); border-color: var(--negro); }
+
+    /* ============================================
+       QUÉ ES ESTE TALLER
+       ============================================ */
+    .que-es-intro {
+      max-width: 640px;
+    }
+
+    .aforo-nota {
+      margin-top: 2rem;
+      padding: 1.2rem 1.5rem;
+      border: 1px solid rgba(168, 168, 168, 0.3);
+      font-size: 0.88rem;
+      color: var(--gris-medio);
+      display: inline-block;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================
+       CINCO GESTOS — mismo tratamiento visual que /ikigaier/#metodo
+       ============================================ */
+    .gestos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .gesto-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .gesto-icon {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+    }
+
+    .gesto-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .gesto-num {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gris-medio);
+      margin-bottom: 0.3rem;
+    }
+
+    .gesto-card h3 { margin-bottom: 0.4rem; }
+    .gesto-card p { font-size: 0.9rem; color: var(--gris-medio); margin-bottom: 0; }
+
+    /* ============================================
+       PARA QUIÉN
+       ============================================ */
+    .perfiles-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .perfiles-list li {
+      font-size: 0.95rem;
+      color: var(--gris-medio);
+      margin-bottom: 0.8rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .perfiles-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gris-claro);
+    }
+
+    /* ============================================
+       LO QUE TE LLEVAS
+       ============================================ */
+    .llevas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .llevas-item {
+      padding: 1.5rem;
+      border: 1px solid rgba(168, 168, 168, 0.25);
+    }
+
+    .llevas-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .llevas-item p {
+      font-size: 0.85rem;
+      color: var(--gris-medio);
+      margin-bottom: 0;
+    }
+
+    .llevas-portada {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .llevas-portada img {
+      max-width: 280px;
+      height: auto;
+      box-shadow: 0 8px 32px rgba(39, 39, 39, 0.12);
+    }
+
+    .llevas-portada .pie {
+      font-size: 0.72rem;
+      color: var(--gris-claro);
+      letter-spacing: 0.08em;
+      margin-top: 0.6rem;
+    }
+
+    /* ============================================
+       PRÓXIMA SESIÓN — Bloque dinámico
+       ============================================ */
+    .sesion-section {
+      background: var(--negro);
+      color: var(--blanco-pag);
+    }
+    .sesion-section h2 { color: var(--blanco-pag); }
+
+    /* Estado A: sesión confirmada */
+    .sesion-confirmada {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .sesion-datos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .sesion-dato {
+      text-align: center;
+    }
+
+    .sesion-dato .dato-label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gris-claro);
+      margin-bottom: 0.3rem;
+    }
+
+    .sesion-dato .dato-valor {
+      font-size: 1.05rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .sesion-organiza {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--gris-claro);
+      letter-spacing: 0.06em;
+    }
+
+    /* Estado B: sin sesión */
+    .sesion-pendiente {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .sesion-pendiente .aviso {
+      font-size: 1.1rem;
+      color: var(--gris-claro);
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .sesion-pendiente .newsletter-form {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .sesion-pendiente .newsletter-form input[type="email"] {
+      padding: 0.85rem 1.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      border: 1.5px solid var(--gris-medio);
+      background: transparent;
+      color: var(--blanco-pag);
+      min-width: 280px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .sesion-pendiente .newsletter-form input[type="email"]::placeholder {
+      color: var(--gris-claro);
+      font-weight: 300;
+    }
+    .sesion-pendiente .newsletter-form input[type="email"]:focus { border-color: var(--blanco-pag); }
+
+    /* ============================================
+       SOBRE MANEL — mismo tratamiento que /ikigaier/#autor
+       ============================================ */
+    .autor-flex {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .autor-texto { flex: 1; }
+
+    .autor-simbolo {
+      flex-shrink: 0;
+      width: 140px;
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       CTA / NEWSLETTER
+       ============================================ */
+    .cta-section {
+      text-align: center;
+      background: var(--negro);
+      color: var(--blanco-pag);
+    }
+    .cta-section h2 { color: var(--blanco-pag); }
+    .cta-section .lead { color: var(--gris-claro); }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input[type="email"] {
+      padding: 0.85rem 1.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      border: 1.5px solid var(--gris-medio);
+      background: transparent;
+      color: var(--blanco-pag);
+      min-width: 280px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .newsletter-form input[type="email"]::placeholder {
+      color: var(--gris-claro);
+      font-weight: 300;
+    }
+    .newsletter-form input[type="email"]:focus { border-color: var(--blanco-pag); }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 1px solid rgba(168, 168, 168, 0.25);
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--gris-claro);
+      margin-bottom: 0.4rem;
+    }
+
+    footer a {
+      color: var(--gris-medio);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    footer a:hover { color: var(--negro); }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links-divider {
+      color: var(--gris-claro);
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 700px) {
+      section { padding: 4.5rem 0; }
+      .hero { padding: 7rem 0 3.5rem; }
+
+      .gestos-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+      .llevas-grid { grid-template-columns: 1fr; }
+      .sesion-datos { flex-direction: column; gap: 1.5rem; }
+      .autor-flex { flex-direction: column-reverse; text-align: center; }
+      .newsletter-form { flex-direction: column; align-items: center; }
+      .newsletter-form input[type="email"],
+      .sesion-pendiente .newsletter-form input[type="email"] { min-width: 100%; }
+    }
+  </style>
+
+  <!--
+  ============================================================
+  CONFIGURACIÓN DE PRÓXIMA SESIÓN
+  Editar solo este bloque para cambiar los datos de la sesión.
+
+  ESTADO A — hay sesión confirmada:
+    confirmed: true → completa fecha, hora, ciudad, espacio,
+    precio, ticketUrl y organizadoCon.
+
+  ESTADO B — no hay sesión confirmada:
+    confirmed: false → el resto de campos se ignoran.
+    Se muestra formulario de captura de email.
+  ============================================================
+  -->
+  <script>
+    const sesionConfig = {
+      confirmed: true,
+      fecha: '[PENDIENTE]',
+      hora: '[PENDIENTE]',
+      ciudad: 'Vilanova i la Geltrú',
+      espacio: 'REDBAR Vilanova',
+      precio: '[PENDIENTE]',
+      ticketUrl: '#',
+      organizadoCon: 'REDBAR Vilanova'
+    };
+  </script>
+
+  <!-- Structured Data: Event (solo cuando hay sesión confirmada) -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Taller IKIGAIER: Camina sin separarte de ti",
+    "description": "Dos horas guiadas para recorrer los cinco gestos del método IKIGAIER, con el cuaderno de trabajo incluido.",
+    "organizer": {
+      "@type": "Person",
+      "name": "Manel Rueda",
+      "url": "https://manelrueda.com/ikigaier/"
+    },
+    "eventStatus": "https://schema.org/EventScheduled",
+    "offers": {
+      "@type": "Offer",
+      "price": "[PENDIENTE]",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "#"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "REDBAR Vilanova",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vilanova i la Geltrú"
+      }
+    },
+    "inLanguage": "es",
+    "performer": {
+      "@type": "Person",
+      "name": "Manel Rueda"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============================================
+  HEADER
+  ============================================ -->
+  <header>
+    <div class="nav-inner">
+      <a href="/ikigaier/" class="nav-logo">ik<span class="accent">igai</span>er</a>
+      <a href="/ikigaier/" class="nav-back">← volver</a>
+    </div>
+  </header>
+
+  <!-- ============================================
+  HERO
+  ============================================ -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <p class="pretitle">taller · método ikigaier</p>
+      <h1>Camina sin separarte de ti</h1>
+      <p class="bajada">
+        El taller que activa el cuaderno. Dos horas guiadas para recorrer los cinco gestos del método IKIGAIER, con material físico para continuar el camino después.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#proxima-sesion" class="btn btn-primary">próxima sesión</a>
+        <a href="mailto:manel@manelrueda.com?subject=Programar%20taller%20IKIGAIER" class="text-link">¿organizas eventos? proponer una sesión →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  QUÉ ES ESTE TALLER
+  ============================================ -->
+  <section id="que-es">
+    <div class="container">
+      <span class="section-label">qué es este taller</span>
+      <h2>Dos horas para abrir preguntas, no para resolverlas</h2>
+
+      <div class="que-es-intro">
+        <p class="lead">
+          Este taller no es una clase magistral. No es una conferencia. Es una experiencia guiada de dos horas donde las preguntas del método IKIGAIER se abren en grupo, con dinámicas de pareja y material físico para continuar después.
+        </p>
+        <p>
+          Cada asistente recibe el cuaderno <em>Camina sin separarte de ti</em> (publicado en 2026), que es la base del recorrido. Durante el taller se activan sus páginas con ejercicios guiados. Pero el trabajo de verdad empieza cuando sales por la puerta.
+        </p>
+        <p>
+          Es una experiencia presencial, en grupo, con dinámicas de pareja. No se comparte lo íntimo: se comparte el proceso. El taller introduce y detona; el recorrido completo se hace después en solitario, con el cuaderno como guía.
+        </p>
+        <p>
+          No se necesitan conocimientos previos. No hace falta haber leído el libro. Solo hacen falta ganas de parar y hacerte preguntas distintas.
+        </p>
+
+        <div class="aforo-nota">
+          30 plazas por sesión. El formato exige grupo manejable.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  LOS CINCO GESTOS
+  ============================================ -->
+  <section id="cinco-gestos">
+    <div class="container">
+      <span class="section-label">los cinco gestos</span>
+      <h2>El recorrido del taller, etapa a etapa</h2>
+      <p class="lead">Los mismos cinco gestos del método, trabajados en directo con dinámicas guiadas.</p>
+
+      <div class="gestos-grid">
+        <!-- Gesto 1 -->
+        <div class="gesto-card">
+          <div class="gesto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="18" stroke="#272727" stroke-width="1.5" fill="none"/>
+              <circle cx="28" cy="28" r="6" stroke="#6E6E6E" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="gesto-num">01</span>
+            <h3>Parar y escuchar</h3>
+            <p>Antes de avanzar, mirar dónde estás. Hacer silencio para oír lo que el ruido tapa.</p>
+          </div>
+        </div>
+
+        <!-- Gesto 2 -->
+        <div class="gesto-card">
+          <div class="gesto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="28" cy="28" rx="18" ry="14" stroke="#272727" stroke-width="1.5" fill="none"/>
+              <ellipse cx="28" cy="28" rx="8" ry="5" stroke="#6E6E6E" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="gesto-num">02</span>
+            <h3>Mirar dónde te has alejado de ti</h3>
+            <p>Reconocer las pequeñas traiciones cotidianas. Sin juicio, sin drama.</p>
+          </div>
+        </div>
+
+        <!-- Gesto 3 -->
+        <div class="gesto-card">
+          <div class="gesto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 22 C18 16 24 12 28 12 C32 12 38 16 40 22 C42 28 46 34 44 38 C42 42 36 44 28 44 C20 44 14 42 12 38 C10 34 14 28 16 22 Z" stroke="#272727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <line x1="22" y1="28" x2="30" y2="28" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="28" y1="26" x2="28" y2="32" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="gesto-num">03</span>
+            <h3>Reconocer las máscaras</h3>
+            <p>Las protecciones que un día te ayudaron y hoy te limitan. Verlas para poder elegir.</p>
+          </div>
+        </div>
+
+        <!-- Gesto 4 -->
+        <div class="gesto-card">
+          <div class="gesto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 44 Q20 28 28 18 Q36 28 42 44" stroke="#272727" stroke-width="1.5" fill="none"/>
+              <path d="M18 40 Q22 32 28 24 Q34 32 38 40" stroke="#6E6E6E" stroke-width="1.2" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="gesto-num">04</span>
+            <h3>Bajar de la mente al cuerpo</h3>
+            <p>El propósito no se piensa, se siente. La inteligencia que ya está en tu cuerpo.</p>
+          </div>
+        </div>
+
+        <!-- Gesto 5 -->
+        <div class="gesto-card">
+          <div class="gesto-icon">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="28" cy="28" rx="19" ry="12.5" stroke="#272727" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M22 23 Q28 18 34 26" stroke="#6E6E6E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="gesto-num">05</span>
+            <h3>Cerrar y elegir un primer paso</h3>
+            <p>No un plan de vida. Un gesto concreto, real, posible esta semana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  PARA QUIÉN ES
+  ============================================ -->
+  <section id="para-quien">
+    <div class="container">
+      <span class="section-label">para quién es</span>
+      <h2>Este taller es para ti si…</h2>
+
+      <ul class="perfiles-list">
+        <li>Sientes que avanzas sin saber bien hacia dónde y necesitas parar antes de seguir corriendo.</li>
+        <li>Has probado las «recetas» del ikigai occidental y te has quedado con hambre de algo más honesto.</li>
+        <li>Estás cansado del lenguaje vacío del propósito y buscas una experiencia real, no un eslogan.</li>
+        <li>Has leído el libro y quieres llevarlo a la práctica acompañado, en un espacio guiado.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================
+  LO QUE TE LLEVAS
+  ============================================ -->
+  <section id="lo-que-te-llevas">
+    <div class="container">
+      <span class="section-label">lo que te llevas</span>
+      <h2>Más allá de las dos horas</h2>
+
+      <div class="llevas-grid">
+        <div class="llevas-item">
+          <h3>Una experiencia guiada de dos horas</h3>
+          <p>Con dinámicas individuales, en pareja y en grupo. Sin presión, sin exposición innecesaria.</p>
+        </div>
+        <div class="llevas-item">
+          <h3>El cuaderno en papel</h3>
+          <p><em>Camina sin separarte de ti</em>, incluido en la entrada. Tu guía para continuar el camino después del taller.</p>
+        </div>
+        <div class="llevas-item">
+          <h3>Un primer paso concreto</h3>
+          <p>Identificado durante la sesión. No una lista de objetivos: un gesto real, posible, elegido por ti.</p>
+        </div>
+        <div class="llevas-item">
+          <h3>Una palabra ancla</h3>
+          <p>Para volver al taller cuando lo necesites. Una llave personal que te traiga de vuelta a lo que descubriste.</p>
+        </div>
+      </div>
+
+      <div class="llevas-portada">
+        <img src="../assets/images/cuaderno-camina-portada.png" alt="Portada del cuaderno Camina sin separarte de ti" width="280" height="auto" loading="lazy">
+        <p class="pie">El cuaderno que cada asistente se lleva en papel</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  PRÓXIMA SESIÓN — Bloque parametrizado
+  ============================================ -->
+  <section class="sesion-section" id="proxima-sesion">
+    <div class="container">
+      <span class="section-label" style="color: rgba(168,168,168,0.7);">próxima sesión</span>
+      <h2 id="sesion-titulo"></h2>
+
+      <!--
+      ============================================================
+      BLOQUE DINÁMICO DE PRÓXIMA SESIÓN
+      Este contenido se renderiza desde el objeto sesionConfig
+      definido en el <head>. Para cambiar la sesión, edita ese
+      objeto y no toques el HTML de esta sección.
+
+      El script al final de la página (sesionRenderer) se encarga
+      de mostrar el Estado A o el Estado B según sesionConfig.confirmed
+      ============================================================
+      -->
+      <div id="sesion-contenido"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  SOBRE MANEL — copy coherente con /ikigaier/#autor
+  ============================================ -->
+  <section id="sobre-manel">
+    <div class="container">
+      <span class="section-label">sobre manel</span>
+      <h2>Manel Rueda</h2>
+
+      <div class="autor-flex">
+        <div class="autor-texto">
+          <p class="lead">
+            Manel Rueda no es escritor de oficio. Tiene una profesión, una rutina, una vida.
+          </p>
+          <p>
+            Escribe sobre las preguntas que aprendió a hacerse cuando dejó de buscar respuestas. No se considera un experto en ikigai. Se considera alguien que lo experimenta.
+          </p>
+          <p>
+            «Hay una diferencia importante entre creer y experimentar: creer es adoptar una idea; experimentar es dejar que una idea te cambie. De lo segundo nacen el libro, el cuaderno y este taller.»
+          </p>
+          <p style="margin-top: 1.5rem;">
+            <a href="/ikigaier/" class="text-link">más sobre Manel y el método →</a>
+          </p>
+        </div>
+        <div class="autor-simbolo">
+          <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%">
+            <ellipse cx="52" cy="60" rx="34" ry="22" stroke="#A8A8A8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M40 48 Q52 42 68 54" stroke="#A8A8A8" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M80 54 Q102 40 114 52" stroke="#A8A8A8" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+            <path d="M96 48 Q140 22 154 40" stroke="#A8A8A8" stroke-width="1" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+  CTA / NEWSLETTER — captura independiente
+  ============================================ -->
+  <section class="cta-section" id="newsletter">
+    <div class="container">
+      <span class="section-label" style="color: rgba(168,168,168,0.7);">newsletter</span>
+      <h2>¿No puedes venir o quieres saber de futuras sesiones?</h2>
+      <p class="lead">
+        Déjame tu email y te aviso del próximo taller IKIGAIER. Sin spam. Solo lo esencial.
+      </p>
+
+      <form class="newsletter-form" id="newsletter-form" action="https://formspree.io/f/xgodvlqw" method="POST">
+        <input type="hidden" name="_next" value="https://manelrueda.com/taller/?success=1">
+        <input type="hidden" name="_subject" value="Nuevo suscriptor desde la página del taller IKIGAIER">
+        <input type="email" name="email" id="newsletter-email" placeholder="tu@email.com" required aria-label="Correo electrónico">
+        <button type="submit" class="btn btn-light" id="newsletter-btn">avísame</button>
+      </form>
+      <p id="newsletter-msg" style="display:none; margin-top:1rem; font-size:0.9rem;"></p>
+    </div>
+  </section>
+
+  <!-- ============================================
+  FOOTER
+  ============================================ -->
+  <footer>
+    <div class="container">
+      <p style="font-weight:400; font-size:1rem; letter-spacing:0.1em;">ik<span style="color:#C2866B;">igai</span>er</p>
+      <p>&copy; 2026 Manel Rueda. Todos los derechos reservados.</p>
+      <ul class="footer-links">
+        <li><a href="/ikigaier/#libro">libro</a></li>
+        <li><a href="/ikigaier/#metodo">método</a></li>
+        <li><a href="/ikigaier/#productos">productos</a></li>
+        <li><a href="/ikigaier/#cuaderno">cuaderno</a></li>
+        <li><a href="/taller/">taller</a></li>
+        <li><a href="/ikigaier/#autor">autor</a></li>
+        <li><a href="/ikigaier/#contacto">contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ============================================
+  SCRIPTS
+  ============================================ -->
+  <script>
+    (function() {
+      // ============================================================
+      // RENDERIZADOR DEL BLOQUE DE PRÓXIMA SESIÓN
+      // Lee sesionConfig (definido en <head>) y renderiza:
+      //   Estado A: sesión confirmada con datos
+      //   Estado B: mensaje "por anunciar" + newsletter
+      // ============================================================
+      var container = document.getElementById('sesion-contenido');
+      var titulo = document.getElementById('sesion-titulo');
+
+      if (sesionConfig.confirmed) {
+        // ---- ESTADO A: hay sesión confirmada ----
+        titulo.textContent = 'Próxima sesión';
+        container.innerHTML =
+          '<div class="sesion-confirmada">' +
+            '<div class="sesion-datos">' +
+              '<div class="sesion-dato">' +
+                '<span class="dato-label">fecha</span>' +
+                '<span class="dato-valor">' + sesionConfig.fecha + '</span>' +
+              '</div>' +
+              '<div class="sesion-dato">' +
+                '<span class="dato-label">hora</span>' +
+                '<span class="dato-valor">' + sesionConfig.hora + '</span>' +
+              '</div>' +
+              '<div class="sesion-dato">' +
+                '<span class="dato-label">lugar</span>' +
+                '<span class="dato-valor">' + sesionConfig.ciudad + '</span>' +
+              '</div>' +
+              '<div class="sesion-dato">' +
+                '<span class="dato-label">precio</span>' +
+                '<span class="dato-valor">' + sesionConfig.precio + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<a href="' + sesionConfig.ticketUrl + '" class="btn btn-light" target="_blank" rel="noopener noreferrer">reservar plaza</a>' +
+            '<p class="sesion-organiza">organizado con ' + sesionConfig.organizadoCon + '</p>' +
+          '</div>';
+      } else {
+        // ---- ESTADO B: no hay sesión confirmada ----
+        titulo.textContent = 'Próxima sesión: por anunciar';
+        container.innerHTML =
+          '<div class="sesion-pendiente">' +
+            '<p class="aviso">Ahora mismo no hay fechas confirmadas.</p>' +
+            '<p style="color: var(--gris-claro); margin-bottom: 0.5rem;">Déjame tu email y te aviso en cuanto haya nueva sesión.</p>' +
+            '<form class="newsletter-form" action="https://formspree.io/f/xgodvlqw" method="POST">' +
+              '<input type="hidden" name="_next" value="https://manelrueda.com/taller/?success=1">' +
+              '<input type="hidden" name="_subject" value="Interesado en próxima sesión del taller IKIGAIER">' +
+              '<input type="email" name="email" placeholder="tu@email.com" required aria-label="Correo electrónico">' +
+              '<button type="submit" class="btn btn-light btn-small">avísame</button>' +
+            '</form>' +
+            '<a href="mailto:manel@manelrueda.com?subject=Programar%20taller%20IKIGAIER" class="text-link" style="color: var(--gris-claro); border-color: rgba(168,168,168,0.4);">¿organizas eventos y quieres programar el taller? escríbeme →</a>' +
+          '</div>';
+      }
+
+      // ============================================================
+      // NEWSLETTER — confirmación al volver de Formspree
+      // ============================================================
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('success') === '1') {
+        var msg = document.getElementById('newsletter-msg');
+        if (msg) {
+          msg.textContent = 'Gracias. Te avisaré cuando haya novedades.';
+          msg.style.color = '#FDFBF7';
+          msg.style.display = 'block';
+        }
+        var url = new URL(window.location.href);
+        url.searchParams.delete('success');
+        window.history.replaceState({}, document.title, url.pathname + url.search + url.hash);
+      }
+    })();
+  </script>
+
+</body>
+</html>
