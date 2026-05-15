@@ -177,6 +177,29 @@
     }
 
     /* ============================================
+       HERO PORTADAS
+       ============================================ */
+    .hero-portadas {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2.2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-portada {
+      width: 140px;
+      aspect-ratio: 2/3;
+      border: 1px solid rgba(39,39,39,0.12);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .hero-portadas { gap: 1.2rem; }
+      .hero-portada { width: 110px; }
+    }
+
+    /* ============================================
        BUTTONS
        ============================================ */
     .btn {
@@ -657,6 +680,17 @@
         La dirección y la presencia.<br>
         Sin fórmulas, sin promesas fáciles, sin atajos.
       </p>
+
+      <!-- Portadas libro + cuaderno -->
+      <div class="hero-portadas">
+        <div class="hero-portada">
+          <img src="../assets/images/libro-el-ikigai-portada.png" alt="Portada del libro El Ikigai que no te contaron" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div class="hero-portada">
+          <img src="../assets/images/cuaderno-camina-portada.png" alt="Portada del cuaderno Camina sin separarte de ti" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+
       <a href="#productos" class="btn">conocer el ecosistema</a>
     </div>
   </section>
