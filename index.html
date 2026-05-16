@@ -66,16 +66,15 @@
 
     .portada-col-texto {
       text-align: center;
-      order: 1;
     }
 
     .portada-img {
-      flex-shrink: 0;
+      display: block;
       width: 200px;
       height: auto;
       border-radius: 6px;
       box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-      order: 2;
+      margin: 1.5rem auto;
     }
 
     .portada-tag {
@@ -169,18 +168,18 @@
 <body>
   <main>
     <section class="portada" aria-label="Portada de Manel Rueda">
-      <img
-        class="portada-img"
-        src="assets/manel-rueda-retrato.jpg"
-        alt="Manel Rueda"
-        width="150"
-        height="150"
-        loading="eager"
-      >
       <div class="portada-col-texto">
         <span class="portada-tag">manel rueda</span>
         <h1>MANEL RUEDA</h1>
         <p class="subtitulo">Autor de «Lo que no te contaron del ikigai» y creador del enfoque IKIGAIER</p>
+        <img
+          class="portada-img"
+          src="assets/manel-rueda-retrato.jpg"
+          alt="Manel Rueda"
+          width="150"
+          height="150"
+          loading="eager"
+        >
         <p class="texto-principal">Un espacio para explorar propósito, consciencia y acción desde una forma más humana, profunda y real de entender el ikigai.</p>
         <p class="microhistoria">Durante años busqué el propósito en el hacer, en los resultados y en las respuestas rápidas. Con el tiempo entendí que el sentido no se encuentra solo avanzando, sino aprendiendo a no separarte de ti mientras caminas.</p>
         <p class="microhistoria">De esa búsqueda nace IKIGAIER: una forma más humana, profunda y real de mirar el ikigai.</p>
