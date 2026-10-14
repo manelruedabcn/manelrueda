@@ -1,0 +1,27 @@
+# Manel Rueda
+
+> Sitio oficial de Manel Rueda, autor de «El Ikigai que no te contaron» y creador de IKIGAIER, un proyecto editorial sobre el ikigai consciente: unir lo que haces con desde dónde lo haces.
+
+El proyecto IKIGAIER (libros, test de ikigai gratuito, talleres y blog) vive en https://www.ikigaier.com. Esta web es la página de autor.
+
+## Páginas
+
+- [Manel Rueda](https://manelrueda.com/): página de autor, con sus libros y enlaces.
+- [Versión en Markdown](https://manelrueda.com/index.md): el contenido de la página de autor en texto plano.
+- [IKIGAIER](https://www.ikigaier.com/es/): el proyecto completo. Tiene su propio llms.txt en https://www.ikigaier.com/llms.txt.
+- [Sobre Manel Rueda en IKIGAIER](https://www.ikigaier.com/es/manel-rueda/): biografía extendida.
+
+## Libros
+
+- **No todo lo que te frena es tuyo**: por qué lo conseguiste casi todo y sigues sintiendo ese vacío.
+- **Disciplina para indisciplinados**: motivación y fuerza de voluntad son dos sistemas distintos.
+- **El Ikigai que no te contaron**: el ikigai real y la distancia entre lo que haces y lo que eres. https://www.ikigaier.com/es/libros/el-ikigai-que-no-te-contaron/
+- **Camina sin separarte de ti**: cuaderno de trabajo.
+
+Todos en castellano: https://www.ikigaier.com/es/libros/
+
+## Contacto
+
+- Instagram: https://www.instagram.com/manel_rueda/
+- Cartas IKIGAIER (newsletter): https://ikigaier.substack.com
+- Amazon: https://www.amazon.es/stores/Manel-Rueda/author/B0GX5X8QX7
