@@ -40,7 +40,13 @@
       "name": "Manel Rueda",
       "description": "Sitio oficial de Manel Rueda, autor de El Ikigai que no te contaron y creador de IKIGAIER.",
       "inLanguage": "es",
-      "publisher": { "@id": "https://www.ikigaier.com/#person" }
+      "publisher": {
+        "@id": "https://www.ikigaier.com/#person"
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": "https://www.ikigaier.com/es/blog/"
+      }
     },
     {
       "@type": "ProfilePage",
@@ -48,9 +54,20 @@
       "url": "https://manelrueda.com/",
       "name": "Manel Rueda · Autor de El Ikigai que no te contaron",
       "inLanguage": "es",
-      "isPartOf": { "@id": "https://manelrueda.com/#website" },
-      "mainEntity": { "@id": "https://www.ikigaier.com/#person" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://manelrueda.com/assets/og-manel-rueda.jpg", "width": 1200, "height": 630 }
+      "isPartOf": {
+        "@id": "https://manelrueda.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://www.ikigaier.com/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://manelrueda.com/assets/og-manel-rueda.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "description": "Página de autor de Manel Rueda: libros y enlaces a IKIGAIER.",
+      "dateModified": "2026-10-14"
     },
     {
       "@type": "Person",
@@ -60,15 +77,39 @@
       "image": "https://manelrueda.com/assets/manel-rueda-retrato-400.jpg",
       "jobTitle": "Autor",
       "description": "Autor y creador de IKIGAIER. Escribe sobre el ikigai consciente y la unión del hacer y el ser.",
-      "worksFor": { "@type": "Organization", "@id": "https://www.ikigaier.com/#organization", "name": "IKIGAIER", "url": "https://www.ikigaier.com/" },
-      "address": { "@type": "PostalAddress", "addressCountry": "ES" },
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://www.ikigaier.com/#organization",
+        "name": "IKIGAIER",
+        "url": "https://www.ikigaier.com/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "ES"
+      },
       "sameAs": [
         "https://www.ikigaier.com/es/manel-rueda/",
         "https://ikigaier.substack.com",
         "https://www.instagram.com/manel_rueda/",
         "https://www.amazon.es/stores/Manel-Rueda/author/B0GX5X8QX7"
       ],
-      "knowsAbout": ["Ikigai", "Propósito", "Desarrollo personal"]
+      "knowsAbout": [
+        "Ikigai",
+        "Propósito",
+        "Desarrollo personal"
+      ],
+      "email": "manel@manelrueda.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "información",
+        "email": "manel@manelrueda.com",
+        "availableLanguage": [
+          "es",
+          "ca"
+        ]
+      },
+      "givenName": "Manel",
+      "familyName": "Rueda"
     }
   ]
 }
@@ -275,9 +316,11 @@
   <main>
     <section class="portada" aria-label="Portada de Manel Rueda">
       <div class="portada-col-texto">
-        <span class="portada-tag">manel rueda</span>
-        <h1>MANEL RUEDA</h1>
-        <p class="subtitulo">Autor de «El Ikigai que no te contaron» y creador del enfoque IKIGAIER</p>
+        <header>
+          <span class="portada-tag">manel rueda</span>
+          <h1>MANEL RUEDA</h1>
+          <p class="subtitulo">Autor de «El Ikigai que no te contaron» y creador del enfoque IKIGAIER</p>
+        </header>
         <picture>
           <source srcset="assets/manel-rueda-retrato-400.webp" type="image/webp">
           <img
@@ -321,7 +364,7 @@
   </main>
 
   <footer class="pie">
-    <p>Manel Rueda · <a href="https://www.ikigaier.com/es/">IKIGAIER</a> · <a href="https://www.instagram.com/manel_rueda/" target="_blank" rel="me noopener">Instagram</a> · <a href="https://ikigaier.substack.com" target="_blank" rel="me noopener">Cartas IKIGAIER</a> · <a href="https://www.amazon.es/stores/Manel-Rueda/author/B0GX5X8QX7" target="_blank" rel="me noopener">Amazon</a></p>
+    <nav aria-label="Enlaces de Manel Rueda"><p>Manel Rueda · <a href="https://www.ikigaier.com/es/">IKIGAIER</a> · <a href="https://www.instagram.com/manel_rueda/" target="_blank" rel="me noopener">Instagram</a> · <a href="https://ikigaier.substack.com" target="_blank" rel="me noopener">Cartas IKIGAIER</a> · <a href="https://www.amazon.es/stores/Manel-Rueda/author/B0GX5X8QX7" target="_blank" rel="me noopener">Amazon</a></p></nav>
   </footer>
 </body>
 </html>
