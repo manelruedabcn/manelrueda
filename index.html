@@ -3,21 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sitio oficial de Manel Rueda, autor de Lo que no te contaron del ikigai y creador del enfoque IKIGAIER.">
-  <title>Manel Rueda | IKIGAIER</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#FDFBF7">
+  <meta name="description" content="Sitio oficial de Manel Rueda, autor de El Ikigai que no te contaron y creador de IKIGAIER: libros, test de ikigai y talleres.">
+  <title>Manel Rueda · Autor de El Ikigai que no te contaron</title>
   <link rel="canonical" href="https://manelrueda.com/">
+  <link rel="alternate" type="text/markdown" href="https://manelrueda.com/index.md">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Manel Rueda | IKIGAIER">
-  <meta property="og:description" content="Sitio oficial de Manel Rueda, autor de Lo que no te contaron del ikigai y creador del enfoque IKIGAIER.">
+  <meta property="og:site_name" content="Manel Rueda">
+  <meta property="og:title" content="Manel Rueda · Autor de El Ikigai que no te contaron">
+  <meta property="og:description" content="Sitio oficial de Manel Rueda, autor de El Ikigai que no te contaron y creador de IKIGAIER: libros, test de ikigai y talleres.">
   <meta property="og:url" content="https://manelrueda.com/">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="profile">
   <meta property="og:locale" content="es_ES">
+  <meta property="og:image" content="https://manelrueda.com/assets/og-manel-rueda.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Retrato de Manel Rueda">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Manel Rueda | IKIGAIER">
-  <meta name="twitter:description" content="Sitio oficial de Manel Rueda, autor de Lo que no te contaron del ikigai y creador del enfoque IKIGAIER.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manel Rueda · Autor de El Ikigai que no te contaron">
+  <meta name="twitter:description" content="Sitio oficial de Manel Rueda, autor de El Ikigai que no te contaron y creador de IKIGAIER: libros, test de ikigai y talleres.">
+  <meta name="twitter:image" content="https://manelrueda.com/assets/og-manel-rueda.jpg">
+  <meta name="twitter:image:alt" content="Retrato de Manel Rueda">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://manelrueda.com/#website",
+      "url": "https://manelrueda.com/",
+      "name": "Manel Rueda",
+      "description": "Sitio oficial de Manel Rueda, autor de El Ikigai que no te contaron y creador de IKIGAIER.",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://www.ikigaier.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://manelrueda.com/#profilepage",
+      "url": "https://manelrueda.com/",
+      "name": "Manel Rueda · Autor de El Ikigai que no te contaron",
+      "inLanguage": "es",
+      "isPartOf": { "@id": "https://manelrueda.com/#website" },
+      "mainEntity": { "@id": "https://www.ikigaier.com/#person" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://manelrueda.com/assets/og-manel-rueda.jpg", "width": 1200, "height": 630 }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.ikigaier.com/#person",
+      "name": "Manel Rueda",
+      "url": "https://manelrueda.com/",
+      "image": "https://manelrueda.com/assets/manel-rueda-retrato-400.jpg",
+      "jobTitle": "Autor",
+      "description": "Autor y creador de IKIGAIER. Escribe sobre el ikigai consciente y la unión del hacer y el ser.",
+      "worksFor": { "@type": "Organization", "@id": "https://www.ikigaier.com/#organization", "name": "IKIGAIER", "url": "https://www.ikigaier.com/" },
+      "address": { "@type": "PostalAddress", "addressCountry": "ES" },
+      "sameAs": [
+        "https://www.ikigaier.com/es/manel-rueda/",
+        "https://ikigaier.substack.com",
+        "https://www.instagram.com/manel_rueda/",
+        "https://www.amazon.es/stores/Manel-Rueda/author/B0GX5X8QX7"
+      ],
+      "knowsAbout": ["Ikigai", "Propósito", "Desarrollo personal"]
+    }
+  ]
+}
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +104,7 @@
 
     main {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100%;
@@ -153,6 +209,56 @@
       font-weight: 300;
     }
 
+    /* --- Libros y pie --- */
+    .libros {
+      max-width: 480px;
+      margin: 3.5rem auto 0;
+      text-align: left;
+    }
+
+    .libros h2 {
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris-claro);
+      text-align: center;
+      margin-bottom: 1.6rem;
+    }
+
+    .libros ul { list-style: none; }
+
+    .libros li { margin-bottom: 1.4rem; }
+
+    .libros h3 {
+      font-weight: 400;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.2rem;
+    }
+
+    .libros h3 a { color: var(--negro); text-decoration: none; border-bottom: 1px solid var(--gris-claro); }
+
+    .libros h3 a:hover { border-bottom-color: var(--terracota); }
+
+    .libros p {
+      font-size: 0.9rem;
+      color: var(--gris-medio);
+      line-height: 1.7;
+    }
+
+    .pie {
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--gris-claro);
+      padding: 0 2rem 2.5rem;
+    }
+
+    .pie a { color: var(--gris-medio); text-decoration: none; border-bottom: 1px solid var(--gris-claro); }
+
+    .pie a:hover { color: var(--negro); }
+
     @media (max-width: 640px) {
       .portada {
         gap: 2rem;
@@ -171,22 +277,51 @@
       <div class="portada-col-texto">
         <span class="portada-tag">manel rueda</span>
         <h1>MANEL RUEDA</h1>
-        <p class="subtitulo">Autor de «Lo que no te contaron del ikigai» y creador del enfoque IKIGAIER</p>
-        <img
-          class="portada-img"
-          src="assets/manel-rueda-retrato.jpg"
-          alt="Manel Rueda"
-          width="150"
-          height="150"
-          loading="eager"
-        >
+        <p class="subtitulo">Autor de «El Ikigai que no te contaron» y creador del enfoque IKIGAIER</p>
+        <picture>
+          <source srcset="assets/manel-rueda-retrato-400.webp" type="image/webp">
+          <img
+            class="portada-img"
+            src="assets/manel-rueda-retrato-400.jpg"
+            alt="Retrato de Manel Rueda"
+            width="200"
+            height="284"
+            fetchpriority="high"
+          >
+        </picture>
         <p class="texto-principal">Un espacio para explorar propósito, consciencia y acción desde una forma más humana, profunda y real de entender el ikigai.</p>
         <p class="microhistoria">Durante años busqué el propósito en el hacer, en los resultados y en las respuestas rápidas. Con el tiempo entendí que el sentido no se encuentra solo avanzando, sino aprendiendo a no separarte de ti mientras caminas.</p>
         <p class="microhistoria">De esa búsqueda nace IKIGAIER: una forma más humana, profunda y real de mirar el ikigai.</p>
-        <a href="https://www.ikigaier.com" class="btn-entrar">Entrar en IKIGAIER</a>
+        <a href="https://www.ikigaier.com/es/" class="btn-entrar">Entrar en IKIGAIER</a>
         <p class="frase-secundaria">Camina sin separarte de ti.</p>
       </div>
     </section>
+
+    <section class="libros" aria-labelledby="libros-h">
+      <h2 id="libros-h">Libros</h2>
+      <ul>
+        <li>
+          <h3><a href="https://www.ikigaier.com/es/libros/#no-todo">No todo lo que te frena es tuyo</a></h3>
+          <p>Por qué lo conseguiste casi todo y sigues sintiendo ese vacío: los atajos que trae de serie cualquier cerebro y las creencias que te instalaron, y cómo se sostienen entre sí.</p>
+        </li>
+        <li>
+          <h3><a href="https://www.ikigaier.com/es/libros/#disciplina">Disciplina para indisciplinados</a></h3>
+          <p>Motivación y fuerza de voluntad son dos sistemas distintos. Ocho patrones para entender por qué lo dejas y cómo retomar sin empezar de cero.</p>
+        </li>
+        <li>
+          <h3><a href="https://www.ikigaier.com/es/libros/el-ikigai-que-no-te-contaron/">El Ikigai que no te contaron</a></h3>
+          <p>Una mirada profunda, clara y honesta sobre el ikigai real y la distancia entre lo que haces y lo que eres. Sin postureo. Sin atajos.</p>
+        </li>
+        <li>
+          <h3><a href="https://www.ikigaier.com/es/libros/#camina">Camina sin separarte de ti</a></h3>
+          <p>Cuaderno de trabajo. Una invitación a parar, mirar hacia dentro y poner por escrito lo que normalmente no te atreves a decirte.</p>
+        </li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="pie">
+    <p>Manel Rueda · <a href="https://www.ikigaier.com/es/">IKIGAIER</a> · <a href="https://www.instagram.com/manel_rueda/" target="_blank" rel="me noopener">Instagram</a> · <a href="https://ikigaier.substack.com" target="_blank" rel="me noopener">Cartas IKIGAIER</a> · <a href="https://www.amazon.es/stores/Manel-Rueda/author/B0GX5X8QX7" target="_blank" rel="me noopener">Amazon</a></p>
+  </footer>
 </body>
 </html>
